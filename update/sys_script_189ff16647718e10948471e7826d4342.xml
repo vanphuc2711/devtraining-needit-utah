@@ -7,7 +7,7 @@
         <action_query>false</action_query>
         <action_update>false</action_update>
         <active>true</active>
-        <add_message>true</add_message>
+        <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
@@ -15,12 +15,12 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="incident">assignment_groupISEMPTY^EQ<item endquery="false" field="assignment_group" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+        <filter_condition table="incident">assignment_group=8a4dde73c6112278017a6a4baf547aa7^EQ<item display_table="sys_user_group" display_value="Software" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="8a4dde73c6112278017a6a4baf547aa7"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
-        <message><![CDATA[<p>add group dô r submit</p>]]></message>
-        <name>têtstét</name>
+        <message/>
+        <name>Create incident con</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,26 +31,33 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	
-	gs.info("Phuc hello" +current.number)
+
+	gs.info("Phuc BR: record dang chay bR nay la:" + current.number);
+	var gr = new GlideRecord("incident");
+	gr.initialize();
+	gr.parent_incident = current.sys_id;
+	gr.short_description = "Day la incident con tao ra sau khi chay BR after";
+	gr.assignment_group = 'd625dccec0a8016700a222a0f7900d06';
+	gr.insert();
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-26 08:04:07</sys_created_on>
+        <sys_created_on>2024-04-29 08:04:31</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>8ef162a947754a10948471e7826d431d</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>têtstét</sys_name>
+        <sys_id>189ff16647718e10948471e7826d4342</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Create incident con</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_8ef162a947754a10948471e7826d431d</sys_update_name>
+        <sys_update_name>sys_script_189ff16647718e10948471e7826d4342</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-29 07:45:51</sys_updated_on>
+        <sys_updated_on>2024-04-29 08:08:25</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=8ef162a947754a10948471e7826d431d"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=189ff16647718e10948471e7826d4342"/>
 </record_update>

@@ -11,16 +11,16 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>incident</collection>
+        <collection>sys_user</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="incident">assignment_groupISEMPTY^EQ<item endquery="false" field="assignment_group" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+        <filter_condition table="sys_user">phoneISEMPTY^EQ<item endquery="false" field="phone" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
-        <message><![CDATA[<p>add group dô r submit</p>]]></message>
-        <name>têtstét</name>
+        <message><![CDATA[<p>you just add field  business phone when it&#39;s empty</p>]]></message>
+        <name>users- create after inser set auto phone</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,26 +31,26 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	
-	gs.info("Phuc hello" +current.number)
+	// Add your code here
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-26 08:04:07</sys_created_on>
+        <sys_created_on>2024-05-01 02:09:18</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>8ef162a947754a10948471e7826d431d</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>têtstét</sys_name>
+        <sys_id>b512c347477d0250948471e7826d4399</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>users- create after inser set auto phone</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_8ef162a947754a10948471e7826d431d</sys_update_name>
+        <sys_update_name>sys_script_b512c347477d0250948471e7826d4399</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-29 07:45:51</sys_updated_on>
-        <template/>
-        <when>after</when>
+        <sys_updated_on>2024-05-01 02:38:37</sys_updated_on>
+        <template>phone=03^EQ</template>
+        <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=8ef162a947754a10948471e7826d431d"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b512c347477d0250948471e7826d4399"/>
 </record_update>
